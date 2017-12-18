@@ -1,0 +1,3 @@
+[submodule "qml/qqr.js"]
+	path = qml/qqr.js
+	url = https://github.com/Acce0ss/qqr.js/
