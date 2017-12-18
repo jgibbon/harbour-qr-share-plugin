@@ -88,6 +88,18 @@ Translation source for QRCode share plugin
 %defattr(-,root,root,-)
 %{_datadir}/translations/nemotransferengine/harbour_qr_share_plugin-ru.qm
 
+%package hu_qm
+Summary:   Translation to Hungarian for QRCode share plugin
+License:   MIT
+Group:     System/Libraries
+
+%description hu_qm
+Translation source for QRCode share plugin
+
+%files hu_qm
+%defattr(-,root,root,-)
+%{_datadir}/translations/nemotransferengine/harbour_qr_share_plugin-hu.qm
+
 %prep
 %setup -q -n %{name}-%{version}
 
