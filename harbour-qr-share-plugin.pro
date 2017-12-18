@@ -113,13 +113,29 @@ russian_install.path = /usr/share/translations/nemotransferengine
 russian_install.files = $$QM_RU_FILE
 russian_install.CONFIG += no_check_exist
 
+TS_HU_FILE = translations/harbour_qr_share_plugin_hu.ts
+QM_HU_FILE = harbour_qr_share_plugin-hu.qm
+
+hungarian.commands += lupdate . -ts $$TS_RU_FILE; lrelease -idbased $$TS_HU_FILE -qm $$QM_HU_FILE
+hungarian.CONFIG += no_check_exist no_link
+hungarian.depends = ts
+hungarian.input = $$TS_HU_FILE
+hungarian.output = $$QM_HU_FILE
+
+hungarian_install.path = /usr/share/translations/nemotransferengine
+hungarian_install.files = $$QM_HU_FILE
+hungarian_install.CONFIG += no_check_exist
+
 QMAKE_EXTRA_TARGETS += ts engineering_english finnish swedish english russian
 
 PRE_TARGETDEPS += ts engineering_english finnish swedish english russian
 
-INSTALLS += ts_install english_install finnish_install swedish_install russian_install
+INSTALLS += ts_install english_install finnish_install swedish_install russian_install hungarian_install
 # engineering_english_install
 
 OTHER_FILES += \
     rpm/* \
     translations/*
+
+DISTFILES += \
+    translations/harbour_qr_share_plugin_hu.ts
