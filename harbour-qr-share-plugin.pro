@@ -41,6 +41,7 @@ INSTALLS += qqrlib
 TS_FILE = $$OUT_PWD/harbour_qr_share_plugin.ts
 EE_QM = $$OUT_PWD/harbour_qr_share_plugin-eng_en.qm
 
+ts.commands += mkdir -p $$OUT_PWD/translations;
 ts.commands += lupdate . -ts $$TS_FILE
 ts.CONFIG += no_check_exist no_link
 ts.output = $$TS_FILE
