@@ -28,19 +28,19 @@ Page {
     property bool upsideDown: false
     property int hysteresis: -10
 
-    onReadingChanged: {
+//    onReadingChanged: {
 
-      if(reading.x < hysteresis)
-      {
-        upsideDown = true;
-        hysteresis = -2;
-      }
-      else
-      {
-        upsideDown = false;
-        hysteresis = -10;
-      }
-    }
+//      if(reading.x < hysteresis)
+//      {
+//        upsideDown = true;
+//        hysteresis = -2;
+//      }
+//      else
+//      {
+//        upsideDown = false;
+//        hysteresis = -10;
+//      }
+//    }
   }
 
   SilicaFlickable {
@@ -162,7 +162,7 @@ Page {
           width: 420
           height: width
 
-          border: 1
+//          border: 1
 
           value: switch(root.content.type)
                  {
@@ -170,6 +170,8 @@ Page {
                    //remove photo from contact data
                    return root.content.data.replace(/^(PHOTO| ).*$[\r\n]*/gm, "");
                  case "text/x-url":
+                   return root.content.status;
+                 case "text/plain":
                    return root.content.status;
                  default:
                    return "Sorry for the error...";
